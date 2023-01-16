@@ -27,16 +27,16 @@ const checkWin = () => {
         [2, 4, 6],
     ]
 
-    // wins.forEach(e => {
-    //     if ((boxText[e[0]].innerText === boxText[e[1]].innerText) && (boxText[e[1]].innerText === boxText[e[2]].innerText) && (boxText[e[0]].innerText !== "")) {
-    //         document.querySelector(".info").innerText = boxText[e[0]].innerText + " won";
-    //         gameover =true;
-    //         document.getElementById("winningGif").style.width = "150px";
-    //         winner.play();
+    wins.forEach(e => {
+        if ((boxText[e[0]].innerText === boxText[e[1]].innerText) && (boxText[e[1]].innerText === boxText[e[2]].innerText) && (boxText[e[0]].innerText !== "")) {
+            document.querySelector(".info").innerText = boxText[e[0]].innerText + " won";
+            gameover = true;
+            document.getElementById("winningGif").style.width = "150px";
+            winner.play();
 
-    //         // reseting the game
-    //     }
-    // })
+            // reseting the game
+        }
+    })
 }
 
 // game logic
