@@ -15,7 +15,7 @@ const changeTurn = () => {
 // winning logic
 const checkWin = () => {
     let boxText = document.getElementsByClassName('character');
-    
+
     let wins = [
         [0, 1, 2],
         [3, 4, 5],
@@ -27,16 +27,16 @@ const checkWin = () => {
         [2, 4, 6],
     ]
 
-    wins.forEach(e => {
-        if ((boxText[e[0]].innerText === boxText[e[1]].innerText) && (boxText[e[1]].innerText === boxText[e[2]].innerText) && (boxText[e[0]].innerText !== "")) {
-            document.querySelector(".info").innerText = boxText[e[0]].innerText + " won";
-            gameover =true;
-            document.getElementById("winningGif").style.width = "150px";
-            winner.play();
+    // wins.forEach(e => {
+    //     if ((boxText[e[0]].innerText === boxText[e[1]].innerText) && (boxText[e[1]].innerText === boxText[e[2]].innerText) && (boxText[e[0]].innerText !== "")) {
+    //         document.querySelector(".info").innerText = boxText[e[0]].innerText + " won";
+    //         gameover =true;
+    //         document.getElementById("winningGif").style.width = "150px";
+    //         winner.play();
 
-            // reseting the game
-        }
-    })
+    //         // reseting the game
+    //     }
+    // })
 }
 
 // game logic
@@ -52,8 +52,7 @@ Array.from(boxes).forEach((element) => {
             click.play();
             checkWin();
             console.log("button clicked");
-            if(!gameover)
-            {
+            if (!gameover) {
                 document.getElementsByClassName("info")[0].innerHTML = "Turns for " + turn;
 
             }
@@ -64,10 +63,10 @@ Array.from(boxes).forEach((element) => {
 
 // adding eventlistener to reset button
 let boxe = document.getElementsByClassName("box");
-reset.addEventListener('click', ()=>{
+reset.addEventListener('click', () => {
 
-    Array.from(boxe).forEach((element) =>{
-        element.innerText ="";
+    Array.from(boxe).forEach((element) => {
+        element.innerText = "";
     })
     turn = "X";
     gameover = false;
